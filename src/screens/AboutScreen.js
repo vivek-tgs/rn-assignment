@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import AppButton from '../components/AppButton';
+import AppButton from '../components/Button';
 import ScreenLayoutHoc from '../components/ScreenLayoutHoc';
 import { SCREEN_ROUTES } from '../constants';
 

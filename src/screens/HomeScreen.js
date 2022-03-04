@@ -1,8 +1,8 @@
 import * as React from 'react';
 import {View, Text, Button, Alert, Image, StyleSheet} from 'react-native';
 
-import AppButton from '../components/AppButton';
-import AppSliderButton from '../components/AppSliderButton';
+import AppButton from '../components/Button';
+import AppSliderButton from '../components/SliderButton';
 import ScreenLayoutHoc from '../components/ScreenLayoutHoc';
 import {SCREEN_ROUTES} from '../constants';
 

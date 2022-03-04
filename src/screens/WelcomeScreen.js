@@ -6,12 +6,12 @@ import {View, Text, StyleSheet, Alert} from 'react-native';
 import {useSelector, useDispatch} from 'react-redux';
 import DeviceInfo from 'react-native-device-info';
 
-import AppButton from '../components/AppButton';
+import AppButton from '../components/Button';
 import ScreenLayoutHoc from '../components/ScreenLayoutHoc';
 import {SCREEN_ROUTES} from '../constants';
-import AppTextInput from '../components/AppTextInput';
+import AppTextInput from '../components/TextInput';
 import {changeUserName} from '../store/actions/userName';
-import AppModal from '../components/AppModal';
+import AppModal from '../components/Modal';
 
 const WelcomeScreen = ({navigation}) => {
   const userName = useSelector(state => state.state.userName);

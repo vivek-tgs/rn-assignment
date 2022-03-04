@@ -1,7 +1,7 @@
 import React from 'react';
 import {Modal, Text, View, StyleSheet} from 'react-native';
 import PropTypes from 'prop-types';
-import AppButton from './AppButton';
+import AppButton from './Button';
 
 const AppModal = ({
   visible,
