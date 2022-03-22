@@ -1,12 +1,13 @@
+// @flow
 import * as React from 'react';
-import {View, Text, Button, Alert, Image, StyleSheet} from 'react-native';
+import { View, Text, Alert, Image, StyleSheet } from 'react-native';
 
 import AppButton from '../components/Button';
 import AppSliderButton from '../components/SliderButton';
 import ScreenLayoutHoc from '../components/ScreenLayoutHoc';
-import {SCREEN_ROUTES} from '../constants';
+import { COLOR_CONSTANT, SCREEN_ROUTES } from '../constants';
 
-const HomeScreen = ({navigation}) => {
+const HomeScreen = ({ navigation }): React.Node => {
   return (
     <ScreenLayoutHoc>
       <View style={styles.container}>
@@ -19,21 +20,21 @@ const HomeScreen = ({navigation}) => {
           onPress={() => navigation.navigate(SCREEN_ROUTES.about)}
         />
         <AppButton
-          buttonColor="#007bff"
+          buttonColor={COLOR_CONSTANT.secondaryBlue}
           title="About"
           buttonStyle={styles.btnStyle}
           textStyle={styles.btnStyleText}
           onPress={() => navigation.navigate(SCREEN_ROUTES.about)}
         />
         <AppButton
-          buttonColor="#28a745"
+          buttonColor={COLOR_CONSTANT.primaryGreen}
           title="Welcome"
           buttonStyle={styles.btnStyle}
           textStyle={styles.btnStyleText}
           onPress={() => navigation.navigate(SCREEN_ROUTES.welcome)}
         />
         <AppButton
-          buttonColor="#607D8B"
+          buttonColor={COLOR_CONSTANT.primaryGray}
           title="Disabled Button"
           buttonStyle={styles.btnStyle}
           textStyle={styles.btnStyleText}
@@ -58,7 +59,7 @@ const HomeScreen = ({navigation}) => {
 
 const styles = StyleSheet.create({
   innerText: {
-    color: 'red',
+    color: COLOR_CONSTANT.primaryRed,
   },
   container: {
     flex: 1,
@@ -74,12 +75,12 @@ const styles = StyleSheet.create({
   btnStyleOne: {
     width: '100%',
     borderWidth: 2,
-    borderColor: '#007bff',
+    borderColor: COLOR_CONSTANT.secondaryBlue,
     alignSelf: 'center',
   },
-  btnStyleTextOne: {fontSize: 20, color: '#007bff'},
-  btnStyleText: {fontSize: 20},
-  btnStyle: {width: '100%', alignSelf: 'center'},
+  btnStyleTextOne: { fontSize: 20, color: COLOR_CONSTANT.secondaryBlue },
+  btnStyleText: { fontSize: 20 },
+  btnStyle: { width: '100%', alignSelf: 'center' },
 });
 
 export default HomeScreen;

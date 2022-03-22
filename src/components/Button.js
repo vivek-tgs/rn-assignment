@@ -1,6 +1,18 @@
-import React from 'react';
-import {StyleSheet, TouchableOpacity, Text} from 'react-native';
-import PropTypes from 'prop-types';
+//@flow
+import * as React from 'react';
+import { StyleSheet, TouchableOpacity, Text } from 'react-native';
+import type { StyleObj } from 'react-native/Libraries/StyleSheet/StyleSheetTypes';
+import { COLOR_CONSTANT } from '../constants';
+
+type Props = {
+  title: string,
+  buttonStyle: StyleObj,
+  buttonColor: string,
+  onPress: void,
+  titleColor: string,
+  textStyle: StyleObj,
+  disabled?: boolean,
+};
 
 const AppButton = ({
   title,
@@ -10,16 +22,19 @@ const AppButton = ({
   buttonStyle,
   textStyle,
   disabled = false,
-}) => (
+}: Props): React.Node => (
   <TouchableOpacity
     style={{
       ...styles.container,
       ...buttonStyle,
-      backgroundColor: buttonColor || '#007bff',
+      backgroundColor: buttonColor || COLOR_CONSTANT.secondaryBlue,
     }}
     disabled={disabled}
-    onPress={onPress}>
-    <Text style={{...styles.title, color: titleColor || '#fff', ...textStyle}}>
+    onPress={onPress}
+  >
+    <Text
+      style={{ ...styles.title, color: titleColor || COLOR_CONSTANT.primaryWhite, ...textStyle }}
+    >
       {title}
     </Text>
   </TouchableOpacity>
@@ -28,7 +43,7 @@ const AppButton = ({
 const styles = StyleSheet.create({
   container: {
     marginTop: 15,
-    backgroundColor: '#007bff',
+    backgroundColor: COLOR_CONSTANT.secondaryBlue,
     height: 48,
     paddingHorizontal: 15,
     borderRadius: 5,
@@ -36,16 +51,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   title: {
-    color: '#fff',
+    color: COLOR_CONSTANT.primaryWhite,
     fontSize: 16,
   },
 });
-AppButton.propTypes = {
-  title: PropTypes.string.isRequired,
-  onPress: PropTypes.func,
-  disabled: PropTypes.bool,
-  buttonColor: PropTypes.string,
-  titleColor: PropTypes.string,
-};
-
 export default AppButton;

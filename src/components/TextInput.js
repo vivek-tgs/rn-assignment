@@ -1,11 +1,20 @@
-import React from 'react';
-import {StyleSheet, TextInput} from 'react-native';
-import PropTypes from 'prop-types';
+//@flow
 
-const AppTextInput = ({value, style, placeholder, onchange}) => {
+import * as React from 'react';
+import { StyleSheet, TextInput } from 'react-native';
+import type { StyleObj } from 'react-native/Libraries/StyleSheet/StyleSheetTypes';
+
+type Props = {
+  value: string,
+  style: StyleObj,
+  placeholder: String,
+  onchange: void,
+};
+
+const AppTextInput = ({ value, style, placeholder, onchange }: Props): React.Node => {
   return (
     <TextInput
-      style={{...styles.input, ...style}}
+      style={{ ...styles.input, ...style }}
       onChangeText={onchange}
       value={value}
       autoCapitalize="none"
@@ -24,10 +33,4 @@ const styles = StyleSheet.create({
     borderRadius: 3,
   },
 });
-
-AppTextInput.propTypes = {
-  placeholder: PropTypes.string,
-  value: PropTypes.string,
-  onchange: PropTypes.func,
-};
 export default AppTextInput;

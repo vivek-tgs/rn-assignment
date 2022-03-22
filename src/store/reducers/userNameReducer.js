@@ -1,4 +1,4 @@
-import {ACTION_TYPE_CONSTANT} from '../../constants';
+import { ACTION_TYPE_CONSTANT } from '../../constants';
 
 const initialState = {
   userName: '',

@@ -7,7 +7,8 @@
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
-    "lint": "eslint ."
+    "format": "prettier-eslint --eslint-config-path ./.eslintrc.js --write '**/*.js'",
+    "lint": "eslint . --ext .js"
   },
   "dependencies": {
     "@react-navigation/native": "^6.0.8",
@@ -15,7 +16,6 @@
     "prop-types": "^15.8.1",
     "react": "17.0.2",
     "react-native": "0.67.3",
-    "react-native-device-info": "^8.4.9",
     "react-native-safe-area-context": "^4.1.2",
     "react-native-screens": "^3.13.0",
     "react-native-slide-to-unlock": "^0.1.6",
@@ -27,9 +27,18 @@
     "@babel/runtime": "^7.12.5",
     "@react-native-community/eslint-config": "^2.0.0",
     "babel-jest": "^26.6.3",
-    "eslint": "7.14.0",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-react": "^7.29.4",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "eslint-plugin-react-native": "^4.0.0",
+    "flow-bin": "^0.174.1",
     "jest": "^26.6.3",
     "metro-react-native-babel-preset": "^0.66.2",
+    "prettier": "2.6.0",
     "react-test-renderer": "17.0.2"
   },
   "jest": {

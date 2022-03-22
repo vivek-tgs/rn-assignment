@@ -1,14 +1,22 @@
+//@flow
 import * as React from 'react';
-import {Text, Alert, Image, StyleSheet} from 'react-native';
+import { Text, StyleSheet } from 'react-native';
 import Slider from 'react-native-slide-to-unlock';
-import PropTypes from 'prop-types';
+import { COLOR_CONSTANT } from '../constants';
 
-const AppSliderButton = ({onSlideSuccess, sliderElement, title}) => {
+type Props= {
+  title: string,
+  sliderElement: React.Node,
+  onSlideSuccess: void,
+}
+
+const AppSliderButton = ({ onSlideSuccess, sliderElement, title }: Props): React.Node => {
   return (
     <Slider
       onEndReached={onSlideSuccess}
       containerStyle={styles.container}
-      sliderElement={sliderElement}>
+      sliderElement={sliderElement}
+    >
       <Text style={styles.btnText}>{title || 'SLIDE TO UNLOCK'}</Text>
     </Slider>
   );
@@ -17,7 +25,7 @@ const AppSliderButton = ({onSlideSuccess, sliderElement, title}) => {
 const styles = StyleSheet.create({
   container: {
     marginTop: 8,
-    backgroundColor: '#ccc',
+    backgroundColor: COLOR_CONSTANT.primaryGray,
     borderRadius: 8,
     alignItems: 'center',
     justifyContent: 'center',
@@ -27,10 +35,5 @@ const styles = StyleSheet.create({
     fontWeight: '400',
   },
 });
-
-AppSliderButton.propTypes = {
-  title: PropTypes.string,
-  sliderElement: PropTypes.node.isRequired,
-};
 
 export default AppSliderButton;
