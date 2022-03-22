@@ -1,7 +1,7 @@
 ///@flow
 
 import * as React from 'react';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { View, Text, StyleSheet, Alert } from 'react-native';
 import { useSelector, useDispatch } from 'react-redux';
 // import DeviceInfo from 'react-native-device-info';
@@ -19,14 +19,6 @@ const WelcomeScreen = ({ navigation }): React.Node => {
   const [modalOpen, setModalOpen] = useState(false);
 
   const dispatch = useDispatch();
-
-  useEffect(() => {
-    // DeviceInfo.isEmulator().then((isEmulator) => {
-    //   if (isEmulator) {
-    //     setModalOpen(true);
-    //   }
-    // });
-  }, []);
 
   const onSave = () => {
     if (name.trim().length > 2) {
